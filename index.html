@@ -29,24 +29,24 @@
     <h2>Sample Table</h2>
     <table>
  <thead>
-<tr>
-  <th>Sample #</th>
-  <th>Time (ms)</th>
-  <th>Amplitude</th>
-  <th>Level</th>
-  <th>Binary</th>
-</tr>
+      <tr>
+<th>Sample #</th>
+<th>Time (ms)</th>
+<th>Amplitude</th>
+<th>Level</th>
+<th>Binary</th>
+      </tr>
 </thead>
 <tbody id="sampleRows"></tbody>
  </table>
+    
     <h2>Binary Result</h2>
     <p id="binaryResult"></p>
     <p id="totalBits"></p>
     <h2>Test Results</h2>
-
 <table>
 <thead>
-   <tr>
+      <tr>
 <th>Test</th>
 <th>Frequency (Hz)</th>
 <th>Amplitude</th>
@@ -56,7 +56,7 @@
 <th>Wavelength</th>
 <th>Total Bits</th>
 <th>Binary Result</th>
-   </tr>
+      </tr>
     </thead>
 
     <tbody>
@@ -112,8 +112,44 @@
 </tr>
   </thead>
     <tbody>
-        
-  <tr>
+        <h2>Wave Facts</h2>
+<div id="waveFacts">Click Convert to see the results.</div>
+
+<h2>Sample Table</h2>
+<table>
+    <thead>
+        <tr>
+            <th>Sample #</th>
+            <th>Time (ms)</th>
+            <th>Amplitude</th>
+            <th>Level</th>
+            <th>Binary</th>
+        </tr>
+    </thead>
+    <tbody id="sampleRows"></tbody>
+</table>
+
+<h2>Binary Result</h2>
+<p id="binaryResult"></p>
+<p id="totalBits"></p>
+
+<h2>Test Results</h2>
+<table>
+    <thead>
+        <tr>
+<th>Test</th>
+<th>Frequency (Hz)</th>
+<th>Amplitude</th>
+<th>Samples</th>
+<th>Bits per Sample</th>
+<th>Period (ms)</th>
+<th>Wavelength</th>
+<th>Total Bits</th>
+<th>Binary Result</th>
+        </tr>
+</thead>
+    <tbody>
+        <tr>
 <td>A</td>
 <td>440</td>
 <td>0.8</td>
@@ -122,9 +158,10 @@
 <td>2.27</td>
 <td>78.0 cm</td>
 <td>24</td>
-  </tr>
-      
-   <tr>
+<td>100 101 110 101 100 010 001 010</td>
+        </tr>
+        
+        <tr>
 <td>B</td>
 <td>200</td>
 <td>0.5</td>
@@ -133,9 +170,10 @@
 <td>5.00</td>
 <td>1.72 m</td>
 <td>24</td>
-   </tr>
-      
-   <tr>
+<td>1000 1011 1011 1000 0100 0100</td>
+        </tr>
+        
+        <tr>
 <td>C</td>
 <td>500</td>
 <td>0.9</td>
@@ -144,17 +182,22 @@
 <td>2.00</td>
 <td>68.6 cm</td>
 <td>15</td>
-   </tr>
-    </tbody>  
-      </table>
-    
-    <h2>Explain It</h2><p><strong>1. Explain the three steps your app uses to convert a wave into binary.</strong></p>
-<p>First, the app calculates sample points from a sine wave. Second, it converts each sample into a digital level based on the selected number of bits. Third, it changes each level into binary digits and combines them into one result.</p><p><strong>2. Compare Test A using 2 bits and 6 bits.</strong></p>
-<p>Using 2 bits gives 4 possible digital levels, while 6 bits gives 64.now using 6 bits represents the wave with more detail because it provides more possible levels and keep in mind these has a limit which is 8 bits with 256 levels.</p><p><strong>3. Identify the test with the longest wavelength and explain why.</strong></p>
-<p>Test B has the longest wavelength because its frequency is 200 Hz, the lowest frequency among the three tests. Wavelength and frequency are inversely related, so a lower frequency produces a longer wavelength.</p><p><strong>4. Describe the hardest stage you encountered and how you fixed it.</strong></p>
-<p>The hardest stage was converting the sampled wave values into binary. I worked through it by calculating each sample's digital level and using JavaScript to convert that level into binary with the correct number of digits overall very much a headache.</p>
-    
+<td>100 110 101 010 001</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>Explain It</h2>
+<p><strong>1. Explain the three steps your app uses to convert a wave into binary.</strong></p>
+<p>First, the app calculates sample points from a sine wave. Second, it converts each sample into a digital level based on the selected number of bits. Third, it converts each level into binary digits and combines them into one result.</p>
+<p><strong>2. Compare Test A using 2 bits and 6 bits.</strong></p>
+<p>Using 2 bits provides 4 possible digital levels, while 6 bits provides 64 levels. Six bits can represent the sampled wave with more detail because it allows more possible digital levels. The app supports up to 8 bits, which provides 256 levels.</p>
+<p><strong>3. Identify the test with the longest wavelength and explain why.</strong></p>
+<p>Test B has the longest wavelength because its frequency is 200 Hz, the lowest among the three tests. Wavelength and frequency are inversely related, so a lower frequency produces a longer wavelength when the speed of sound is constant.</p>
+<p><strong>4. Describe the hardest stage you encountered and how you fixed it.</strong></p>
+<p>The hardest stage was converting the sampled wave values into binary. I worked through it by calculating each sample's digital level and using JavaScript to convert that level into binary with the correct number of digits.</p>
 </div>
+
 <script src="script.js"></script>
 </body>
 </html>
